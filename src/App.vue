@@ -31,6 +31,9 @@
         },
         methods: {
           newQuote(quote){
+            if(this.quotes.length >= this.maxQuotes){
+              alert("You've reached a max limit of 10 quotes. Please delete a quote.")
+            }
             if(quote != ''){
               this.quotes.push(quote)
             }
