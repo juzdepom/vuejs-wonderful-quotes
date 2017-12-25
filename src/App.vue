@@ -1,6 +1,7 @@
 <template>
     <div class="container">
-      <new-quote></new-quote>
+      <new-quote @quoteAdded="newQuote"></new-quote>
+      <br />
       <quote-grid :quotes="quotes"></quote-grid>
     </div>
 </template>
@@ -17,6 +18,14 @@
               'This is another quote.'
             ],
             maxQuotes: 10,
+          }
+        },
+        methods: {
+          newQuote(quote){
+            if(quote != ''){
+              this.quotes.push(quote)
+            }
+
           }
         },
         components: {
